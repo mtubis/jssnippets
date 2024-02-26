@@ -1,17 +1,17 @@
-console.log('test, test');
+console.log('code loaded');
 document.addEventListener('DOMContentLoaded', function() {
     var formActivatorItems = document.querySelectorAll('.formactivator input[type=radio]');
     var submitButton = document.querySelector('input[type=submit]');
 
+    function checkRadios() {
+        console.log('checking radios');
+        var isAnyRadioWithValue2Checked = Array.from(formActivatorItems).some(radio => radio.value === '2' && radio.checked);
+        submitButton.disabled = isAnyRadioWithValue2Checked;
+    }
+
     formActivatorItems.forEach(function(radio) {
-        radio.addEventListener('change', function() {
-            if (this.value === '2' && this.checked) {
-                submitButton.disabled = true;
-                console.log('disable button');
-            } else {
-                submitButton.disabled = false;
-                console.log('enable button');
-            }
-        });
+        radio.addEventListener('change', checkRadios);
     });
+
+    checkRadios(); 
 });
