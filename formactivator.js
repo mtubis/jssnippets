@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     formActivatorItems.forEach(function(radio) {
         radio.addEventListener('change', function() {
-            if (this.value === 'Nein' && this.checked) {
+            if (this.value === '2' && this.checked) {
                 submitButton.disabled = true;
             } else {
                 submitButton.disabled = false;
