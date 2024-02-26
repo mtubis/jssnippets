@@ -1,5 +1,3 @@
-alert('Script loaded :)');
-
 function initialize() {
     var formActivatorItems = document.querySelectorAll('.formactivator input[type=radio]');
     var submitButton = document.querySelector('input[type=submit]');
@@ -18,6 +16,7 @@ function initialize() {
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
+    alert('Script loaded, event listener working :)');
 } else {
     initialize();
 }
