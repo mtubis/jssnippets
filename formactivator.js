@@ -1,10 +1,8 @@
-console.log('code loaded');
-document.addEventListener('DOMContentLoaded', function() {
+function initialize() {
     var formActivatorItems = document.querySelectorAll('.formactivator input[type=radio]');
     var submitButton = document.querySelector('input[type=submit]');
 
     function checkRadios() {
-        console.log('checking radios');
         var isAnyRadioWithValue2Checked = Array.from(formActivatorItems).some(radio => radio.value === '2' && radio.checked);
         submitButton.disabled = isAnyRadioWithValue2Checked;
     }
@@ -13,5 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         radio.addEventListener('change', checkRadios);
     });
 
-    checkRadios(); 
-});
+    checkRadios();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+} else {
+    initialize();
+}
