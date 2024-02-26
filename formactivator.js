@@ -1,3 +1,4 @@
+console.log('test, test');
 document.addEventListener('DOMContentLoaded', function() {
     var formActivatorItems = document.querySelectorAll('.formactivator input[type=radio]');
     var submitButton = document.querySelector('input[type=submit]');
