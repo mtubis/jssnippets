@@ -16,7 +16,6 @@ function initialize() {
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
-    alert('Script loaded, event listener working :)');
 } else {
     initialize();
 }
